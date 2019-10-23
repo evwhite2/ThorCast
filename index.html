@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <title>ThorCast</title>
+</head>
+<body>
+
+    <div id="logo">
+        <h1>ThorCast</h1>
+    </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-3">
+                
+                        <div class="card">
+
+                            <div class="card-body">
+                                <div class="input-group mb-3">
+
+                                    <input type="text" class="form-control" placeholder="Search by city" aria-label="Search" aria-describedby="basic-addon2">
+                                    
+                                    <div class="input-group-append">
+                                        <button id="searchBtn" class="btn btn-secondary" type="button">Search
+                                        </button>
+                                    </div>
+
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+         
+                <div class= "col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="currentWeather">
+                                    
+                                    <div class="col-md-6">
+                                        <h1 id="cityName"></h2>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="row">
+                                            <h5 class="currentHeader">Temperature:   </h4>
+                                            <h4 id="currentTemp"></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="row">
+                                            <h5 class="currentHeader">Humidity</h4>
+                                            <h4 id="currentHumid"></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                      <div class="row">
+                                            <h5 class="currentHeader">Current Wind</h4>
+                                            <h4 id="currentWind"></h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <h4 id="currentUV"></h4> 
+                                    </div>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body">
+                            
+                            <h2 class="forcast">5-Day forecast</h2>
+                            
+                            <div class="row">
+
+                                <div class="card" style="width: 12rem;">
+                                        
+                                        <div class="card-body">
+                                            <h5 id="forecastDate-1" class="card-title"> 10/21/2019</h5>
+                                            <img id="forecastIMG-1" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                        <li id="forecastTemp-1" class="list-group-item">Temperature</li>
+                                        <li id="forecastHumid-1" class="list-group-item">Humidity</li>
+                                        </ul>
+                                </div>
+
+                                <div class="card" style="width: 12rem;">
+                                        
+                                        <div class="card-body">
+                                            <h5 id="forecastDate-2" class="card-title"> 10/21/2019</h5>
+                                            <img id="forecastIMG-2" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                        <li id="forecastTemp-2" class="list-group-item">Temperature</li>
+                                        <li id="forecastHumid-2" class="list-group-item">Humidity</li>
+                                        </ul>
+                                </div>
+
+                                <div class="card" style="width: 12rem;">
+                                        
+                                        <div class="card-body">
+                                            <h5 id="forecastDate-3" class="card-title"> 10/21/2019</h5>
+                                            <img id="forecastIMG-3"class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                        <li id="forecastTemp-3" class="list-group-item">Temperature</li>
+                                        <li id="forecastHumid-3" class="list-group-item">Humidity</li>
+                                        </ul>
+                                </div>
+
+                                <div class="card" style="width: 12rem;">
+                                        
+                                        <div class="card-body">
+                                            <h5 id="forecastDate-4" class="card-title"> 10/21/2019</h5>
+                                            <img id="forecastIMG-4" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                        <li id="forecastTemp-4" class="list-group-item">Temperature</li>
+                                        <li id="forecastHumid-4" class="list-group-item">Humidity</li>
+                                        </ul>
+                                </div>
+
+                                <div class="card" style="width: 12rem;">
+                                        
+                                        <div class="card-body">
+                                            <h5 id="forecastDate-5" class="card-title"> 10/21/2019</h5>
+                                            <img  id="forecastIMG-5" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                        <li id="forecastTemp-5" class="list-group-item">Temperature</li>
+                                        <li id="forecastHumid-5" class="list-group-item">Humidity</li>
+                                        </ul>
+                                </div>
+
+                        </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+        <script src="assets/app.js"> </script>
+        
+
+</body>
+</html>

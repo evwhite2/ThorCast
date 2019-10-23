@@ -1,0 +1,18 @@
+body{
+    background-color: aliceblue;
+     color: #212529;
+}
+.currentHeader{
+    color: #6c757d;
+    padding-right: 10px;
+}
+#cityName{
+    color: black;
+}
+#logo{
+    background-color:#212529;
+    color:whitesmoke;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: center;
+}
