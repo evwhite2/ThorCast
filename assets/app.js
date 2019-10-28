@@ -32,10 +32,12 @@ function success(pos) {
     }).then(function(response){
     
         //current weather updated when page loads
+        currentTemp=response.main.temp;
+        currentTemp= Math.round((currentTemp-273.5)*1.8+32);
         $("#cityName").text(response.name);
-        $("#currentTemp").text(response.main.temp);
+        $("#currentTemp").text(currentTemp+"°F");
         $("#currentHumid").text(response.main.humidity+"%");
-        $("#currentWind").text(response.wind.speed);
+        $("#currentWind"+"mph").text(response.wind.speed);
         $("#currentUV").text(response.coord.value);
      
     })
@@ -45,6 +47,7 @@ function success(pos) {
 
     
     initialForecast();
+
     function initialForecast(){
         
         $.ajax({
@@ -54,23 +57,65 @@ function success(pos) {
             console.log(fcresponse);
 
         var byDay= fcresponse.list;
+        // console.log(byDay);
     
-        for (var i=0; i < 5; i++){
-        var fcDateIndex= $(".forecastDateInfo").this.data("date");   
-        console.log(fcDateIndex);
+        //I couldn't get my for loop to work properly to generate new cards for each round.... working to develope better method here in the future...
 
-        var fcDateInfo= byDay[i].dt;
-        var fcTempInfo= byDay[i].main.temp;
-        var fcHumidInfo= byDay[i].main.humidity;
-        
-        
+        // for (var i=0; i < 5; i++){
 
-        if (fcDateIndex== byDay[i])
-        // var fcImg=byDay[i].weather.icon;
-        console.log(match);  
-        }
+        var fcDateInfo0= byDay[0].dt;
+        console.log(fcDateInfo0);
+        var fcTempInfo0= byDay[0].main.temp;
+        fcTempInfo0= Math.round((fcTempInfo0-273.5)*1.8+32);
+        var fcHumidInfo0= byDay[0].main.humidity;
+        var fcIcon0= byDay[0].weather.icon;
+
+        var iconURL0 = "http://openweathermap.org/img/w/" +fcIcon0 + ".png";
         
-    
+        $("#forecastDateInfo0").text(fcDateInfo0);
+        $("#forecastTemp0").text(fcTempInfo0+"°F");
+        $("#forecastHumid0").text(fcHumidInfo0+"%");
+        $("#forecastIMG-4").attr("src", iconURL0);
+
+        var fcDateInfo1= byDay[1].dt;
+        var fcTempInfo1=byDay[1].main.temp;
+        fcTempInfo1= Math.round((fcTempInfo1-273.5)*1.8+32);
+        var fcHumidInfo1= byDay[1].main.humidity;
+
+        $("#forecastDateInfo1").text(fcDateInfo1);
+        $("#forecastTemp1").text(fcTempInfo1+"°F");
+        $("#forecastHumid1").text(fcHumidInfo1+"%");
+
+        var fcDateInfo2= byDay[2].dt;
+        var fcTempInfo2= byDay[2].main.temp;
+        fcTempInfo2= Math.round((fcTempInfo2-273.5)*1.8+32);
+        var fcHumidInfo2= byDay[2].main.humidity;
+
+        $("#forecastDateInfo2").text(fcDateInfo2);
+        $("#forecastTemp2").text(fcTempInfo2+"°F");
+        $("#forecastHumid2").text(fcHumidInfo2+"%");
+
+        var fcDateInfo3= byDay[3].dt;
+        var fcTempInfo3= byDay[3].main.temp;
+        fcTempInfo3= Math.round((fcTempInfo3-273.5)*1.8+32);
+        var fcHumidInfo3= byDay[3].main.humidity;
+
+        $("#forecastDateInfo3").text(fcDateInfo3);
+        $("#forecastTemp3").text(fcTempInfo3+"°F");
+        $("#forecastHumid3").text(fcHumidInfo3+"%");
+
+        var fcDateInfo4= byDay[4].dt;
+        var fcTempInfo4=byDay[4].main.temp;
+        fcTempInfo4= Math.round((fcTempInfo4-273.5)*1.8+32);
+        var fcHumidInfo4= byDay[4].main.humidity;
+
+        $("#forecastDateInfo4").text(fcDateInfo4);
+        $("#forecastTemp4").text(fcTempInfo4+"°F");
+        $("#forecastHumid4").text(fcHumidInfo4+"%");
+
+
+        //end for loop
+        // }
         });
 
     }
