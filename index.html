@@ -30,7 +30,7 @@
                                     <input id="criteria" type="text" class="form-control" placeholder="Search by city" aria-label="Search" aria-describedby="basic-addon2">
                                     
                                     <div class="input-group-append">
-                                        <button id="searchBtn" class="btn btn-secondary" type="button">Search
+                                        <button class="searchBtn" type="button">Search
                                         </button>
                                     </div>
 
@@ -76,71 +76,42 @@
 
                         <div class="card-body">
                             
-                            <h2 class="forcast">5-Day forecast</h2>
+                            <h2 class="forecast">5-Day forecast</h2>
                             
                             <div class="row">
 
-                                <div class="card" style="width: 12rem;">
+                                <div id="forecastCard" class="card" style="width: 12rem;">
                                         
                                         <div class="card-body">
-                                            <h5 class= "forcastDateInfo"  data-date="0" class="card-title"> 10/21/2019</h5>
+                                            <h5 class= "forcastDateInfo" data-date="0" class="card-title"></h5>
                                             <img id="forecastIMG-0" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
                                         </div>
                                         <ul class="list-group list-group-flush">
                                         <li class="forecastTemp" data-fcTemp="0" class="list-group-item">Temperature</li>
                                         <li class="forecastHumid" data-fcHumid="0" class="list-group-item">Humidity</li>
                                         </ul>
-                                </div>
 
-                                <div class="card" style="width: 12rem;">
-                                        
-                                        <div class="card-body">
-                                            <h5 class= "forecastDateInfo" data-date="1" class="card-title"> 10/21/2019</h5>
+                                        <!-- <div class="card-body">
+                                            <h5 class= "forcastDateInfo" data-date="1" class="card-title"></h5>
                                             <img id="forecastIMG-1" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
                                         </div>
                                         <ul class="list-group list-group-flush">
                                         <li class="forecastTemp" data-fcTemp="1" class="list-group-item">Temperature</li>
                                         <li class="forecastHumid" data-fcHumid="1" class="list-group-item">Humidity</li>
                                         </ul>
-                                </div>
 
-                                <div class="card" style="width: 12rem;">
-                                        
                                         <div class="card-body">
-                                            <h5 class= "forecastDateInfo" data-date="2" class="card-title"> 10/21/2019</h5>
-                                            <img id="forecastIMG-2"class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
+                                            <h5 class= "forcastDateInfo" data-date="2" class="card-title"></h5>
+                                            <img id="forecastIMG-2" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
                                         </div>
                                         <ul class="list-group list-group-flush">
                                         <li class="forecastTemp" data-fcTemp="2" class="list-group-item">Temperature</li>
                                         <li class="forecastHumid" data-fcHumid="2" class="list-group-item">Humidity</li>
-                                        </ul>
+                                        </ul> -->
+
                                 </div>
 
-                                <div class="card" style="width: 12rem;">
-                                        
-                                        <div class="card-body">
-                                            <h5 class= "forecastDateInfo" data-date="3" class="card-title"> 10/21/2019</h5>
-                                            <img id="forecastIMG-3" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                        <li class="forecastTemp" data-fcTemp="3" class="list-group-item">Temperature</li>
-                                        <li class="forecastHumid" data-fcHumid="3" class="list-group-item">Humidity</li>
-                                        </ul>
-                                </div>
-
-                                <div class="card" style="width: 12rem;">
-                                        
-                                        <div class="card-body">
-                                            <h5 class= "forecastDateInfo" data-date="4" class="card-title"> 10/21/2019</h5>
-                                            <img  id="forecastIMG-4" class="card-img-top" src="assets/Example.PNG" alt="Card image cap">
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                        <li class="forecastTemp" data-fcTemp="4" class="list-group-item">Temperature</li>
-                                        <li class="forecastHumid" data-fcHumid="4" class="list-group-item">Humidity</li>
-                                        </ul>
-                                </div>
-
-                        </div>
+                            </div>
                         
                         </div>
 

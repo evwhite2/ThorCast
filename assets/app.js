@@ -3,39 +3,113 @@ var urlBase= "http://api.openweathermap.org/data/2.5/weather?q="
 var myKey= "&APPID=8ccec0c944e2c13538684a7aeece76c0";
 var cityName="";
 var queryURL= urlBase+cityName+myKey;
+var searchHistory=[];
 
 $(document).ready(function(){
+searching();
 
 function success(pos) {
-    var crd = pos.coords;
+    
+    console.log("pos ",pos);
+    var crd =pos.coords;
     var lat= crd.latitude;
     var long= crd.longitude;
     
     console.log(lat, long);
+
+    var instantBase= "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+myKey;
+    var instantBasefc= "http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+long+myKey+"&mode=JSON";
+
+    console.log(instantBase);
     
-    var instantBase= "api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+myKey;
-    var instantBasefc= "api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+long+myKey;
+    initialWeather();
+    
+    function initialWeather(){
+
+    $.ajax({
+        url: instantBase,
+        method: "GET"
+    }).then(function(response){
+    
+        //current weather updated when page loads
+        $("#cityName").text(response.name);
+        $("#currentTemp").text(response.main.temp);
+        $("#currentHumid").text(response.main.humidity+"%");
+        $("#currentWind").text(response.wind.speed);
+        $("#currentUV").text(response.coord.value);
+     
+    })
+
+    
+    };
+
+    
+    initialForecast();
+    function initialForecast(){
+        
+        $.ajax({
+            url: instantBasefc,
+            method: "GET"
+        }).then(function(fcresponse){
+            console.log(fcresponse);
+
+        var byDay= fcresponse.list;
+    
+        for (var i=0; i < 5; i++){
+        var fcDateIndex= $(".forecastDateInfo").this.data("date");   
+        console.log(fcDateIndex);
+
+        var fcDateInfo= byDay[i].dt;
+        var fcTempInfo= byDay[i].main.temp;
+        var fcHumidInfo= byDay[i].main.humidity;
+        
+        
+
+        if (fcDateIndex== byDay[i])
+        // var fcImg=byDay[i].weather.icon;
+        console.log(match);  
+        }
+        
+    
+        });
+
+    }
+
+
 
   }
 
-  var myPosition= window.navigator.geolocation.getCurrentPosition(success);
-//   success(pos);
-  currentWeather();
-  forecast();
+  var pos= window.navigator.geolocation.getCurrentPosition(success);
+    success(pos);
 
-// var country="us";
-// var x=280;
-// var kelvinConvert= Math(x).((x-273.15)*1.8+32);
-// console.log(kelvinConvert);
-
-$("#searchBtn").on("click",function(){
-    var searchVal= $("#criteria").val().trim();
-    cityName= searchVal;
+  
     
-    currentWeather();
- 
+
+
+    function searching(){
+$("#search").click(function(event){
+    
+    event.preventDefault();
+
+    var searchVal= $("#criteria").val();
+    cityName= searchVal;   
+    console.log("my input=",searchVal);
+
+    // if (searchVal!=""&&){
+    //   searchHistory.push(cityName);
+    // }
+    // var ele= $("<div>");
+    // ele.text(searchHistory[0]);
+    // // searchHistory[x].
+    // console.log(searchHistory);
+
 })
 
+    };
+
+
+
+//after determination
 
 var urlForecastBase= "http://api.openweathermap.org/data/2.5/forecast?q="
 var fcQueryURL=urlForecastBase+cityName+myKey+"&mode=JSON";
@@ -72,12 +146,11 @@ $.ajax({
     var byDay= fcresponse.list;
     
     for (var i=0; i < 5; i++){
-       var thisIndex= byDay[i] 
 
-        var fcDateInfo= thisIndex.dt;
+        var fcDateInfo= byDay[i].dt;
         // Math(fcDateInfo)
-        var fcTempInfo= thisIndex.main.temp;
-        var fcHumidInfo= thisIndex.main.humidity;
+        var fcTempInfo= byDay[i].main.temp;
+        var fcHumidInfo= byDay[i].main.humidity;
 
         var fcDateIndex= $(".forecastDateInfo").data("date");
      
@@ -95,7 +168,8 @@ $.ajax({
 
 });
 }
-
+// currentWeather();
+// forecast();
 
 //end of ready function
 });
@@ -109,3 +183,4 @@ $.ajax({
     // for (var 1)
 // })
 // };
+
