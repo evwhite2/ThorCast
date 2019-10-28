@@ -6,6 +6,14 @@ body{
     color: #6c757d;
     padding-right: 10px;
 }
+.fcImages{
+    height:100px;
+    width:100px;
+}
+#currentImg{
+    height: 100px;
+    width:100px;
+}
 #cityName{
     color: black;
 }
