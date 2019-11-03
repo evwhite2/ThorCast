@@ -10,6 +10,7 @@ body{
     height:100px;
     width:100px;
 }
+/* #criteria{} */
 #currentImg{
     height: 100px;
     width:100px;
@@ -17,10 +18,20 @@ body{
 #cityName{
     color: black;
 }
+
 #logo{
     background-color:#212529;
     color:whitesmoke;
     padding-bottom: 5px;
     padding-top: 5px;
     text-align: center;
+}
+
+@media only screen and (min-width:767px) and (max-width: 1055px){
+#criteria{
+    font-size:11px;
+}
+#search{
+    font-size:12px;
+}
 }
