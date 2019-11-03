@@ -4,6 +4,9 @@ var searchHistory=[];
 
 $(document).ready(function(){
 
+var time= moment().format('YYYY/MM/DD hh:mm');
+
+console.log(time);
 
 $("#search").on("click", searching);
 
@@ -133,13 +136,15 @@ function searching(event){
             };
         }
 
-
-function success(pos) {
+//removing this 'function to 'findCurrentPosition' since it will not work when I load my live page
+// function success(pos) {
     
-    var crd =pos.coords;
-    var lat= crd.latitude;
-    var long= crd.longitude;
-
+    // var crd =pos.coords;
+    // var lat= crd.latitude;
+    var lat=41.9258368
+    // var long= crd.longitude;
+    var long= -87.6675072
+    // console.log(lat, long)
 
     var instantBase= "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+myKey;
     var instantBasefc= "http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+long+myKey+"&mode=JSON";
@@ -181,7 +186,7 @@ function success(pos) {
         }).then(function(fcresponse){
 
         var byDay= fcresponse.list;
-        
+        console.log(byDay);
         //I couldn't get my for loop to work properly to generate new cards for each round.... working to develope better method here in the future...
 
         // for (var i=0; i < 5; i++){
@@ -257,7 +262,7 @@ function success(pos) {
 
     }
 
-  }
+//   }
 
   var pos= window.navigator.geolocation.getCurrentPosition(success);
     success(pos);
