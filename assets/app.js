@@ -1,4 +1,4 @@
-var urlBase= "http://api.openweathermap.org/data/2.5/weather?q="
+var urlBase= "https://api.openweathermap.org/data/2.5/weather?q="
 var myKey= "&APPID=8ccec0c944e2c13538684a7aeece76c0";
 // var searchHistory={
 //     city: "Chicago",
@@ -40,7 +40,7 @@ function searching(event){
                     $("#currentWind").text(response.wind.speed);
                     $("#currentUV").text(response.coord.value);
                     var cImg = response.weather[0].icon;
-                    var cImgURL= "http://openweathermap.org/img/w/" +cImg + ".png";
+                    var cImgURL= "https://openweathermap.org/img/w/" +cImg + ".png";
                     $("#currentImg").attr("src", cImgURL);
                     
                 })
@@ -49,7 +49,7 @@ function searching(event){
                 
                 function forecast(){
                 
-                    var urlForecastBase= "http://api.openweathermap.org/data/2.5/forecast?q="
+                    var urlForecastBase= "https://api.openweathermap.org/data/2.5/forecast?q="
                     var fcQueryURL=urlForecastBase+searchVal+myKey+"&mode=JSON";
             
                     console.log(fcQueryURL);
@@ -67,7 +67,7 @@ function searching(event){
                             fcTempInfo0= Math.round((fcTempInfo0-273.5)*1.8+32);
                             var fcHumidInfo0= byDay[7].main.humidity;
                             var cImg= [7].weather[0].icon;
-                            var iconURL0 = "http://openweathermap.org/img/w/" +cImg + ".png";
+                            var iconURL0 = "https://openweathermap.org/img/w/" +cImg + ".png";
                             
                             $("#forecastDateInfo0").text(fcDateInfo0);
                             $("#forecastTemp0").text("Temp: "+fcTempInfo0+"°F");
@@ -79,7 +79,7 @@ function searching(event){
                             fcTempInfo1= Math.round((fcTempInfo1-273.5)*1.8+32);
                             var fcHumidInfo1= byDay[15].main.humidity;
                             var fcIcon1= byDay[15].weather[0].icon;
-                            var iconURL1 = "http://openweathermap.org/img/w/" +fcIcon1 + ".png";
+                            var iconURL1 = "https://openweathermap.org/img/w/" +fcIcon1 + ".png";
                             
 
                             $("#forecastDateInfo1").text(fcDateInfo1);
@@ -92,7 +92,7 @@ function searching(event){
                             fcTempInfo2= Math.round((fcTempInfo2-273.5)*1.8+32);
                             var fcHumidInfo2= byDay[23].main.humidity;
                             var fcIcon2= byDay[23].weather[0].icon;
-                            var iconURL2 = "http://openweathermap.org/img/w/" +fcIcon2 + ".png";
+                            var iconURL2 = "https://openweathermap.org/img/w/" +fcIcon2 + ".png";
                             
 
                             $("#forecastDateInfo2").text(fcDateInfo2);
@@ -105,7 +105,7 @@ function searching(event){
                             fcTempInfo3= Math.round((fcTempInfo3-273.5)*1.8+32);
                             var fcHumidInfo3= byDay[30].main.humidity;
                             var fcIcon3= byDay[30].weather[0].icon;
-                            var iconURL3 = "http://openweathermap.org/img/w/" +fcIcon3 + ".png";
+                            var iconURL3 = "https://openweathermap.org/img/w/" +fcIcon3 + ".png";
                             
 
                             $("#forecastDateInfo3").text(fcDateInfo3);
@@ -118,7 +118,7 @@ function searching(event){
                             fcTempInfo4= Math.round((fcTempInfo4-273.5)*1.8+32);
                             var fcHumidInfo4= byDay[39].main.humidity;
                             var fcIcon4= byDay[39].weather[0].icon;
-                            var iconURL4 = "http://openweathermap.org/img/w/"+fcIcon4 + ".png";
+                            var iconURL4 = "https://openweathermap.org/img/w/"+fcIcon4 + ".png";
                             
 
                             $("#forecastDateInfo4").text(fcDateInfo4);
@@ -141,8 +141,8 @@ function searching(event){
     var long= -87.6675072
     // console.log(lat, long)
 
-    var instantBase= "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+myKey;
-    var instantBasefc= "http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+long+myKey+"&mode=JSON";
+    var instantBase= "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+long+myKey;
+    var instantBasefc= "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+long+myKey+"&mode=JSON";
 
     initialWeather();
     
@@ -157,7 +157,7 @@ function searching(event){
             currentTemp=response.main.temp;
             currentTemp= Math.round((currentTemp-273.5)*1.8+32);
             var cImg = response.weather[0].icon;
-            var cImgURL= "http://openweathermap.org/img/w/" +cImg + ".png";
+            var cImgURL= "https://openweathermap.org/img/w/" +cImg + ".png";
 
             $("#cityName").text(response.name);
             $("#currentTemp").text(currentTemp+"°F");
@@ -191,7 +191,7 @@ function searching(event){
         fcTempInfo0= Math.round((fcTempInfo0-273.5)*1.8+32);
         var fcHumidInfo0= byDay[0].main.humidity;
         var fcIcon0= byDay[0].weather[0].icon;
-        var iconURL0 = "http://openweathermap.org/img/w/" +fcIcon0 + ".png";
+        var iconURL0 = "https://openweathermap.org/img/w/" +fcIcon0 + ".png";
         
         $("#forecastDateInfo0").text(fcDateInfo0);
         $("#forecastTemp0").text("Temp: "+fcTempInfo0+"°F");
@@ -203,7 +203,7 @@ function searching(event){
         fcTempInfo1= Math.round((fcTempInfo1-273.5)*1.8+32);
         var fcHumidInfo1= byDay[15].main.humidity;
         var fcIcon1= byDay[15].weather[0].icon;
-        var iconURL1 = "http://openweathermap.org/img/w/" +fcIcon1 + ".png";
+        var iconURL1 = "https://openweathermap.org/img/w/" +fcIcon1 + ".png";
         
 
         $("#forecastDateInfo1").text(fcDateInfo1);
@@ -216,7 +216,7 @@ function searching(event){
         fcTempInfo2= Math.round((fcTempInfo2-273.5)*1.8+32);
         var fcHumidInfo2= byDay[23].main.humidity;
         var fcIcon2= byDay[23].weather[0].icon;
-        var iconURL2 = "http://openweathermap.org/img/w/" +fcIcon2 + ".png";
+        var iconURL2 = "https://openweathermap.org/img/w/" +fcIcon2 + ".png";
         
 
         $("#forecastDateInfo2").text(fcDateInfo2);
@@ -229,7 +229,7 @@ function searching(event){
         fcTempInfo3= Math.round((fcTempInfo3-273.5)*1.8+32);
         var fcHumidInfo3= byDay[30].main.humidity;
         var fcIcon3= byDay[30].weather[0].icon;
-        var iconURL3 = "http://openweathermap.org/img/w/" +fcIcon3 + ".png";
+        var iconURL3 = "https://openweathermap.org/img/w/" +fcIcon3 + ".png";
         
 
         $("#forecastDateInfo3").text(fcDateInfo3);
@@ -242,7 +242,7 @@ function searching(event){
         fcTempInfo4= Math.round((fcTempInfo4-273.5)*1.8+32);
         var fcHumidInfo4= byDay[39].main.humidity;
         var fcIcon4= byDay[39].weather[0].icon;
-        var iconURL4 = "http://openweathermap.org/img/w/" +fcIcon4 + ".png";
+        var iconURL4 = "https://openweathermap.org/img/w/" +fcIcon4 + ".png";
         
 
         $("#forecastDateInfo4").text(fcDateInfo4);
