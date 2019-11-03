@@ -1,5 +1,5 @@
 body{
-    background-color: aliceblue;
+    background-color:#255986;
      color: #212529;
 }
 .currentHeader{
@@ -17,6 +17,7 @@ body{
 }
 #cityName{
     color: black;
+
 }
 
 #logo{
@@ -28,10 +29,28 @@ body{
 }
 
 @media only screen and (min-width:767px) and (max-width: 1055px){
-#criteria{
-    font-size:11px;
+    #criteria{
+        font-size:11px;
+    }
+    #search{
+        font-size:12px;
+    }
 }
-#search{
-    font-size:12px;
-}
+
+@media only screen and (max-width:345px){
+    #fcCards{
+        justify-content: center;
+    }
+    .forecast{
+        font-size:26px;
+    }
+    #cityName{
+        font-size:35px;
+    }
+    #criteria{
+        font-size:11px;
+    }
+    #search{
+        font-size:12px;
+    }   
 }

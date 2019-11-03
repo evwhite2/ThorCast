@@ -67,7 +67,7 @@ function searching(event){
                             fcTempInfo0= Math.round((fcTempInfo0-273.5)*1.8+32);
                             var fcHumidInfo0= byDay[7].main.humidity;
                             var cImg= [7].weather[0].icon;
-                            var iconURL0 = "http://openweathermap.org/img/w/" +fcIcon0 + ".png";
+                            var iconURL0 = "http://openweathermap.org/img/w/" +cImg + ".png";
                             
                             $("#forecastDateInfo0").text(fcDateInfo0);
                             $("#forecastTemp0").text("Temp: "+fcTempInfo0+"°F");
